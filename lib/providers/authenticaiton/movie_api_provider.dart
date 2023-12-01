@@ -16,7 +16,7 @@ class MovieApiProviderService {
     return await _apiService?.getDocumentData<UpComingMovies>(
         requiresApiKey: true,
         cachePolicy: CachePolicy.request,
-        endpoint: ApiEndpoint.authentication(Authentication.USER_LOGIN),
+        endpoint: ApiEndpoint.movies(Movies.UPCOMING_MOVIES),
         converter: (response) => UpComingMovies.fromJson(response));
   }
 

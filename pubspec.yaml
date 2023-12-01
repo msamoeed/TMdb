@@ -83,10 +83,7 @@ dev_dependencies:
   hive_generator: ^2.0.0
 
 
-flutter_icons:
-  android: "launcher_icon"
-  ios: true,
-  image_path: "assets/e-logo.png"
+
 
 flutter:
   uses-material-design: true
@@ -95,7 +92,7 @@ flutter:
   assets:
     - assets/
     - assets/animations/
-    - assets/slider/
+    
   #  - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
