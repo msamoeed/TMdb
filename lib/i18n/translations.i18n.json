@@ -1,0 +1,14 @@
+{
+    "common" : {
+        "pleaseWait" : "Please Wait"
+    },
+    
+   "login_screen" : {
+    "login" : "Login",
+    "password" : "Password",
+    "username" : "Username",
+    "cannotSignIn" : "Cannot Sign In?",
+    "rememberMe" : "Remember Me",
+    "signIn" : "Sign In"
+   }
+}

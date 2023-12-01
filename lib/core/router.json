@@ -1,0 +1,12 @@
+{
+    "last_updated": "Sun, 04 Jun 2023 15:56:30 GMT",
+    "routes": [
+       
+        {
+            "file_path": "views/error_screen/error_screen_view.dart",
+            "route_name": "error_screenViewRoute",
+            "view_name": "ErrorScreenView"
+        }
+       
+    ]
+}

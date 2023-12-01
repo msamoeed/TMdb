@@ -1,0 +1,14 @@
+{
+    "common" : {
+        "pleaseWait" : "براہ کرم انتظار کریں"
+    },
+    
+    "login_screen" : {
+     "login" : "لاگ ان",
+     "password" : "پاس ورڈ",
+     "username" : "صارف نام",
+     "cannotSignIn" : "لاگ ان نہیں ہو سکتا؟",
+     "rememberMe" : "مجھے یاد رکھیں",
+     "signIn" : "لاگ ان کریں"
+    }
+ }
