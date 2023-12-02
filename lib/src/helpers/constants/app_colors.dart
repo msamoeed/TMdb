@@ -36,7 +36,7 @@ class AppColors {
       Color.fromRGBO(158, 158, 158, 1);
 
   /// The main color used for theming the app.
-  static const Color primaryColor = Colors.black;
+  static const Color primaryColor = Color(0xFF2E2739);
 
   //The error color used for error messages.
   static const Color errorColor = Color(0xFFd45050);
@@ -54,11 +54,11 @@ class AppColors {
 
   /// The light greyish color used for background surfaces
   /// of the app like behind scrolling screens or scaffolds etc.
-  static const Color lightBackgroundColor =  Color(0xfff2f2f2);
+  static const Color lightBackgroundColor =  Color(0xFFF6F6Fa);
 
   /// The darker greyish color used for background surfaces
   /// of the app like behind scrolling screens or scaffolds etc.
-  static const Color backgroundColor = Colors.white;
+  static const Color backgroundColor = Color(0xFFF6F6FA);
 
   static const Color darkBackgroundColor = Color(0xff242424);
 
@@ -67,7 +67,7 @@ class AppColors {
   static const Color surfaceColor = Color.fromARGB(255, 253, 253, 253);
 
   /// The light greyish color used for filling fields of the app.
-  static const Color fieldFillColor = Color.fromARGB(255, 235, 235, 235);
+  static const Color fieldFillColor = Color(0xFFEAE9EB);
 
   /// The color value for red color in the app.
   static const Color redColor = Color(0xFFed0000);
@@ -86,6 +86,7 @@ class AppColors {
 
   /// The color value for light grey borders in the app.
   static const Color lightOutlineColor = Color.fromARGB(255, 224, 224, 224);
+
 
   /// The red [LinearGradient] for buttons in the app.
   static Gradient buttonGradientRed = LinearGradient(

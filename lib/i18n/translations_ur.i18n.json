@@ -1,14 +1,11 @@
 {
     "common" : {
-        "pleaseWait" : "براہ کرم انتظار کریں"
+        "pleaseWait" : "Please Wait"
     },
     
-    "login_screen" : {
-     "login" : "لاگ ان",
-     "password" : "پاس ورڈ",
-     "username" : "صارف نام",
-     "cannotSignIn" : "لاگ ان نہیں ہو سکتا؟",
-     "rememberMe" : "مجھے یاد رکھیں",
-     "signIn" : "لاگ ان کریں"
-    }
- }
+   "movie_screen" : {
+    "watch" : "Watch",
+    "searchHint" : "TV shows, movies and more"
+   
+   }
+}

@@ -5,6 +5,7 @@ import 'package:clock/clock.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutterapp/src/helpers/constants/app_colors.dart';
 import 'package:stacked_services/stacked_services.dart';
 
@@ -42,13 +43,8 @@ import 'core/locator.dart';
     
       WidgetsFlutterBinding.ensureInitialized();
 
-    //Initialize firebase crashlytics
 
-    // FlutterError.onError =
-    //     await FirebaseCrashlytics.instance.recordFlutterFatalError;
-
-    // Initialize firebase messagining
-    //await FirebasePushNotificationService().initFirebaseService();
+   
 
     // For preparing the error monitoring SDK and loading
     // up the `runApp` method in a guarded zone
@@ -84,20 +80,6 @@ import 'core/locator.dart';
  
    
    
-    // await SentryFlutter.init(
-    //   (options) {
-    //     options
-    //       ..dsn = Config.sentryDSN
-    //       ..tracesSampleRate = kDebugMode ? 1.0 : 0.7;
-    //   },
-    //   appRunner: () => appRunner(
-    //     DefaultAssetBundle(
-    //       bundle: SentryAssetBundle(),
-    //       child: app,
-    //     ),
-    //   ),
-    // );
-
 
   static void _initPlatformSpecificDepenedencies() async {
 

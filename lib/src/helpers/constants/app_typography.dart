@@ -60,6 +60,11 @@ class     AppTypography {
       color: AppColors.textBlackColor,
       fontSize: 13,
     ),
+     label16: _poppins.copyWith(
+      color: AppColors.textBlackColor,
+      fontSize: 16,
+      fontWeight: FontWeight.normal
+    ),
     label12: _poppins.copyWith(
       color: AppColors.textBlackColor,
       fontSize: 12,
@@ -108,6 +113,10 @@ class     AppTypography {
       color: AppColors. textWhiteColor,
       fontSize: 13,
     ),
+    label16: _poppins.copyWith(
+      color: AppColors. textWhiteColor,
+      fontSize: 16,
+    ),
     label12: _poppins.copyWith(
       color: AppColors. textWhiteColor,
       fontSize: 12,
@@ -116,6 +125,7 @@ class     AppTypography {
       color: AppColors. textWhiteColor,
       fontSize: 11,
     ),
+
   );
 
   /// The secondary [_FontStyle] used for lower level typography in the app.
@@ -140,6 +150,7 @@ class _FontStyle {
   final TextStyle subtitle13;
   final TextStyle label12;
   final TextStyle label11;
+  final TextStyle label16;
 
   const _FontStyle({
     required this.fontFamily,
@@ -152,6 +163,7 @@ class _FontStyle {
     required this.body14,
     required this.subtitle13,
     required this.label12,
+    required this.label16,
     required this.label11,
   });
 
@@ -168,6 +180,7 @@ class _FontStyle {
       subtitle13: textTheme.bodySmall!,
       label12: textTheme.labelLarge!,
       label11: textTheme.labelSmall!,
+      label16: textTheme.labelMedium!
     );
   }
 
@@ -189,7 +202,7 @@ class _FontStyle {
       bodyMedium: body16,
       bodySmall: body14,
       labelLarge: label12,
-      labelMedium: label12,
+      labelMedium: label16,
       labelSmall: label11,
     );
   }

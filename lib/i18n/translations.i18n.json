@@ -3,12 +3,9 @@
         "pleaseWait" : "Please Wait"
     },
     
-   "login_screen" : {
-    "login" : "Login",
-    "password" : "Password",
-    "username" : "Username",
-    "cannotSignIn" : "Cannot Sign In?",
-    "rememberMe" : "Remember Me",
-    "signIn" : "Sign In"
+   "movie_screen" : {
+    "watch" : "Watch",
+    "searchHint" : "TV shows, movies and more"
+   
    }
 }
