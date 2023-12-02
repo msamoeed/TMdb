@@ -40,13 +40,14 @@ class     AppTypography {
       fontWeight: FontWeight.w600,
     ),
     title18: _poppins.copyWith(
-      color: AppColors.textBlackColor,
+      color: AppColors.textWhiteColor,
       fontSize: 18,
+     
     ),
     subHeading16: _poppins.copyWith(
       color: AppColors.textBlackColor,
       fontSize: 16,
-      fontWeight: FontWeight.bold,
+      fontWeight: FontWeight.w600 ,
     ),
     body16: _poppins.copyWith(
       color: AppColors.textBlackColor,

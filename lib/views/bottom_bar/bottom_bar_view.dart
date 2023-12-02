@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stacked/stacked.dart';
-import 'package:stylish_bottom_bar/stylish_bottom_bar.dart';
 import '../../src/helpers/constants/app_colors.dart';
 import 'bottom_bar_view_model.dart';
 

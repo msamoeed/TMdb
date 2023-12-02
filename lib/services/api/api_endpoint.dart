@@ -24,41 +24,20 @@ class ApiEndpoint {
   /// ```
   static const baseUrl = Config.baseUrl;
 
-  /// Returns the path for an authentication [endpoint].
-  
-
-  
+  /// Returns the path for movies [endpoint].
 
   static String movies(Movies endpoint) {
     switch (endpoint) {
       case Movies.UPCOMING_MOVIES:
         return '/movie/upcoming';
-      default :
-         return '/movie/upcoming';
-
+      default:
+        return '/movie/upcoming';
     }
   }
-
-  
-
-  
-  
-  /// Returns the path for a student [endpoint].
-  ///
-  /// Specify student [erp] to get the path for a specific student.
-  ///
-  /// Specify secondary [extendedResourceId] to get the path for a specific secondary resource.
-
 }
 
-/// A collection of endpoints used for authentication purposes.
+/// A collection of endpoints used for getting movies purposes.
 enum Movies {
   /// An endpoint for today's usage requests.
   UPCOMING_MOVIES,
-
-  
 }
-
-
-
-

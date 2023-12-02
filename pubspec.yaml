@@ -8,9 +8,9 @@ dependencies:
   animated_theme_switcher: ^2.0.3
   another_flushbar: ^1.10.29
   envied: ^0.5.2
- 
+  
   awesome_dio_interceptor: ^1.0.0
-  cached_network_image: ^3.2.1
+  cached_network_image: ^3.3.0
  
   change_app_package_name: ^1.1.0
   connectivity: ^3.0.6

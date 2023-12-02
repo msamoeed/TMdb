@@ -56,11 +56,11 @@ class CustomException implements Exception {
   factory CustomException.fromDioException(Exception error) {
     try {
 
-      if (error is DioError) {
+      if (error is DioException) {
         switch (error.type) {
         
 
-          case DioErrorType.connectionError:
+          case DioExceptionType.connectionError:
             return CustomException(
               exceptionType: _ExceptionType.SocketException,
               statusCode: error.response?.statusCode,
@@ -68,44 +68,44 @@ class CustomException implements Exception {
             );
 
 
-          case DioErrorType.badCertificate:
+          case DioExceptionType.badCertificate:
             return CustomException(
               exceptionType: _ExceptionType.ApiException,
               statusCode: error.response?.statusCode,
               message: 'Bad certificate',
             );
 
-          case DioErrorType.cancel:
+          case DioExceptionType.cancel:
             return CustomException(
               exceptionType: _ExceptionType.CancelException,
               statusCode: error.response?.statusCode,
               message: 'Request cancelled prematurely',
             );
-          case DioErrorType.connectionTimeout:
+          case DioExceptionType.connectionTimeout:
             return CustomException(
               exceptionType: _ExceptionType.ConnectTimeoutException,
               statusCode: error.response?.statusCode,
               message: 'Connection not established',
             );
-          case DioErrorType.sendTimeout:
+          case DioExceptionType.sendTimeout:
             return CustomException(
               exceptionType: _ExceptionType.SendTimeoutException,
               statusCode: error.response?.statusCode,
               message: 'Failed to send',
             );
-          case DioErrorType.receiveTimeout:
+          case DioExceptionType.receiveTimeout:
             return CustomException(
               exceptionType: _ExceptionType.ReceiveTimeoutException,
               statusCode: error.response?.statusCode,
               message: 'Failed to receive',
             );
-          case DioErrorType.badResponse:
+          case DioExceptionType.badResponse:
             return CustomException(
               exceptionType: _ExceptionType.ApiException,
               statusCode: error.response?.statusCode,
               message: error.response?.data['details']['errmsg'] ?? 'Unknown',
             );
-          case DioErrorType.unknown:
+          case DioExceptionType.unknown:
             if (error.message!.contains(_ExceptionType.SocketException.name)) {
               return CustomException(
                 exceptionType: _ExceptionType.FetchDataException,
