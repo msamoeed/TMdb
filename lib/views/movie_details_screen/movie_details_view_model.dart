@@ -4,9 +4,7 @@ import 'package:flutterapp/providers/authenticaiton/movie_api_provider.dart';
 import 'package:logger/logger.dart';
 import 'package:stacked/stacked.dart';
 import 'package:flutter/material.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import '../../core/logger.dart';
-import '../../models/upcoming_movies.dart';
 import '../../src/helpers/helperclasses/movie_nav.dart';
 
 class MovieDetailsScreenViewModel extends BaseViewModel {
@@ -38,10 +36,7 @@ class MovieDetailsScreenViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  // disposePlayer(){
-  //   controller.dispose();
-  // }
-  
+ 
 
   AsyncValue<MovieVideos?> getVideos(ref) {
     return ref.watch(getVideoList);

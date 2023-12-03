@@ -16,7 +16,8 @@ class MovieScreenViewModel extends BaseViewModel {
   bool isSearchBarOpened = false; // Flag to track the state of the search bar
   bool isTyping = false; // Flag to track whether the user is typing
   late String searchText; // Variable to store the search text
-  final NavigationService? _navService = locator<NavigationService>(); // NavigationService instance for navigation
+  final NavigationService? _navService =
+      locator<NavigationService>(); // NavigationService instance for navigation
 
   // Constructor to initialize the logger
   MovieScreenViewModel() {
@@ -25,8 +26,10 @@ class MovieScreenViewModel extends BaseViewModel {
 
   // Method to filter a list of Results based on a search term
   List<Results> searchList(List<Results>? words, String searchTerm) {
-    List<Results> result =
-        words!.where((Results word) => word.title!.toLowerCase().contains(searchTerm.toLowerCase())).toList();
+    List<Results> result = words!
+        .where((Results word) =>
+            word.title!.toLowerCase().contains(searchTerm.toLowerCase()))
+        .toList();
     return result;
   }
 
@@ -65,7 +68,9 @@ class MovieScreenViewModel extends BaseViewModel {
   // Navigation Related Code
 
   // Method to navigate to the Movie Details Screen
-  navigateToMovieDetailScreen({required Results movie, required List<String> genres} ) {
-    _navService!.navigateToView(MovieDetailsScreenView(), arguments: MovieDetails(genres: genres, movie: movie));
+  navigateToMovieDetailScreen(
+      {required Results movie, required List<String> genres}) {
+    _navService!.navigateToView(MovieDetailsScreenView(),
+        arguments: MovieDetails(genres: genres, movie: movie));
   }
 }

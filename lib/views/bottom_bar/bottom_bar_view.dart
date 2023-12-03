@@ -1,5 +1,7 @@
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutterapp/src/helpers/constants/app_typography.dart';
 import 'package:stacked/stacked.dart';
 import '../../src/helpers/constants/app_colors.dart';
 import 'bottom_bar_view_model.dart';
@@ -30,25 +32,53 @@ class BottomBarView extends StatelessWidget {
                 onTap: (val) => viewModel.setIndex(val),
                 type: BottomNavigationBarType.fixed,
                 //add background color
+                selectedLabelStyle: AppTypography.darkprimary.label11,
+                unselectedLabelStyle: AppTypography.darkprimary.label11
+                    .copyWith(color: AppColors.appBarIconLight),
                 backgroundColor: AppColors.primaryColor,
                 items: const <BottomNavigationBarItem>[
                   BottomNavigationBarItem(
                     icon: Icon(
-                      Icons.dashboard,
-                     
+                      EvaIcons.home,
+                      color: AppColors.appBarIconLight,
+                    ),
+                    activeIcon: Icon(
+                      EvaIcons.home,
+                      color: AppColors.textWhiteColor,
                     ),
                     label: 'Dashboard',
                   ),
                   BottomNavigationBarItem(
-                    icon: Icon(Icons.media_bluetooth_on),
+                    icon: Icon(
+                      EvaIcons.playCircle,
+                      color: AppColors.appBarIconLight,
+                    ),
+                    activeIcon: Icon(
+                      EvaIcons.playCircle,
+                      color: AppColors.textWhiteColor,
+                    ),
                     label: 'Watch',
                   ),
                   BottomNavigationBarItem(
-                    icon: Icon(Icons.library_add),
+                    icon: Icon(
+                      Icons.library_add,
+                      color: AppColors.appBarIconLight,
+                    ),
+                    activeIcon: Icon(
+                      Icons.library_add,
+                      color: AppColors.textWhiteColor,
+                    ),
                     label: 'Media Library',
                   ),
-                   BottomNavigationBarItem(
-                    icon: Icon(Icons.more),
+                  BottomNavigationBarItem(
+                    icon: Icon(
+                      EvaIcons.moreHorizontal,
+                      color: AppColors.appBarIconLight,
+                    ),
+                    activeIcon: Icon(
+                      EvaIcons.moreHorizontal,
+                      color: AppColors.textWhiteColor,
+                    ),
                     label: 'More',
                   ),
                 ],
@@ -64,5 +94,3 @@ class BottomBarView extends StatelessWidget {
     );
   }
 }
-
-

@@ -56,6 +56,10 @@ class AppColors {
   /// of the app like behind scrolling screens or scaffolds etc.
   static const Color lightBackgroundColor =  Color(0xFFF6F6Fa);
 
+
+  static const Color appBarIconLight = Color.fromRGBO(130, 125, 136, 1);
+
+
   /// The darker greyish color used for background surfaces
   /// of the app like behind scrolling screens or scaffolds etc.
   static const Color backgroundColor = Color(0xFFF6F6FA);

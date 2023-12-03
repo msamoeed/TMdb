@@ -49,6 +49,7 @@ dependencies:
   sentry_dio: ^7.2.0
   sentry_flutter: ^7.13.2
   
+  
   shimmer: ^2.0.0
  
 
@@ -72,7 +73,12 @@ dependencies:
 
 dev_dependencies:
   build_runner: ^2.2.0
-  flutter_launcher_icons: 
+  flutter_launcher_icons: ^0.13.1
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/logos/apple.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21  
  
   flutter_test:
     sdk: flutter
