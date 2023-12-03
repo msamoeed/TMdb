@@ -49,6 +49,7 @@ dependencies:
   sentry_dio: ^7.2.0
   sentry_flutter: ^7.13.2
   
+  
   shimmer: ^2.0.0
  
 
