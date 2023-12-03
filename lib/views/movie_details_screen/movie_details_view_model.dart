@@ -16,8 +16,6 @@ class MovieDetailsScreenViewModel extends BaseViewModel {
    movieDetails =  ModalRoute.of(context)?.settings.arguments as MovieDetails;
    
   }
-
-  
   
    final getMoviesList = FutureProvider((ref) {
     return ref.watch(movieApiServiceProvider).getAllUpComingMovies();

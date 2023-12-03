@@ -8,5 +8,14 @@
     "searchHint" : "TV shows, movies and more",
     "topResults" : "Top Results"
    
+   },
+   "movie_detail_screen" : {
+    "watch" : "Watch",
+    "releaseDate" : "In Theaterers",
+    "getTickets" : "Get Tickets",
+    "watchTrailer" : "  Watch Trailer",
+    "genres" : "Genres",
+    "Overview" : "Overview"
+   
    }
 }

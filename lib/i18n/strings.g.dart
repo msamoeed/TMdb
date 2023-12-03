@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 8 (4 per locale)
+/// Strings: 20 (10 per locale)
 ///
-/// Built on 2023-12-03 at 07:17 UTC
+/// Built on 2023-12-03 at 13:00 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -152,6 +152,7 @@ class _StringsEn implements BaseTranslations<AppLocale, _StringsEn> {
 	// Translations
 	late final _StringsCommonEn common = _StringsCommonEn._(_root);
 	late final _StringsMovieScreenEn movie_screen = _StringsMovieScreenEn._(_root);
+	late final _StringsMovieDetailScreenEn movie_detail_screen = _StringsMovieDetailScreenEn._(_root);
 }
 
 // Path: common
@@ -174,6 +175,21 @@ class _StringsMovieScreenEn {
 	String get watch => 'Watch';
 	String get searchHint => 'TV shows, movies and more';
 	String get topResults => 'Top Results';
+}
+
+// Path: movie_detail_screen
+class _StringsMovieDetailScreenEn {
+	_StringsMovieDetailScreenEn._(this._root);
+
+	final _StringsEn _root; // ignore: unused_field
+
+	// Translations
+	String get watch => 'Watch';
+	String get releaseDate => 'In Theaterers';
+	String get getTickets => 'Get Tickets';
+	String get watchTrailer => '  Watch Trailer';
+	String get genres => 'Genres';
+	String get Overview => 'Overview';
 }
 
 // Path: <root>
@@ -203,6 +219,7 @@ class _StringsUr implements _StringsEn {
 	// Translations
 	@override late final _StringsCommonUr common = _StringsCommonUr._(_root);
 	@override late final _StringsMovieScreenUr movie_screen = _StringsMovieScreenUr._(_root);
+	@override late final _StringsMovieDetailScreenUr movie_detail_screen = _StringsMovieDetailScreenUr._(_root);
 }
 
 // Path: common
@@ -227,6 +244,21 @@ class _StringsMovieScreenUr implements _StringsMovieScreenEn {
 	@override String get topResults => 'Top Results';
 }
 
+// Path: movie_detail_screen
+class _StringsMovieDetailScreenUr implements _StringsMovieDetailScreenEn {
+	_StringsMovieDetailScreenUr._(this._root);
+
+	@override final _StringsUr _root; // ignore: unused_field
+
+	// Translations
+	@override String get watch => 'Watch';
+	@override String get releaseDate => 'In Theaterers';
+	@override String get getTickets => 'Get Tickets';
+	@override String get watchTrailer => '  Watch Trailer';
+	@override String get genres => 'Genres';
+	@override String get Overview => 'Overview';
+}
+
 /// Flat map(s) containing all translations.
 /// Only for edge cases! For simple maps, use the map function of this library.
 
@@ -237,6 +269,12 @@ extension on _StringsEn {
 			case 'movie_screen.watch': return 'Watch';
 			case 'movie_screen.searchHint': return 'TV shows, movies and more';
 			case 'movie_screen.topResults': return 'Top Results';
+			case 'movie_detail_screen.watch': return 'Watch';
+			case 'movie_detail_screen.releaseDate': return 'In Theaterers';
+			case 'movie_detail_screen.getTickets': return 'Get Tickets';
+			case 'movie_detail_screen.watchTrailer': return '  Watch Trailer';
+			case 'movie_detail_screen.genres': return 'Genres';
+			case 'movie_detail_screen.Overview': return 'Overview';
 			default: return null;
 		}
 	}
@@ -249,6 +287,12 @@ extension on _StringsUr {
 			case 'movie_screen.watch': return 'Watch';
 			case 'movie_screen.searchHint': return 'TV shows, movies and more';
 			case 'movie_screen.topResults': return 'Top Results';
+			case 'movie_detail_screen.watch': return 'Watch';
+			case 'movie_detail_screen.releaseDate': return 'In Theaterers';
+			case 'movie_detail_screen.getTickets': return 'Get Tickets';
+			case 'movie_detail_screen.watchTrailer': return '  Watch Trailer';
+			case 'movie_detail_screen.genres': return 'Genres';
+			case 'movie_detail_screen.Overview': return 'Overview';
 			default: return null;
 		}
 	}
