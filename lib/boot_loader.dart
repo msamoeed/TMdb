@@ -34,13 +34,14 @@ import 'core/locator.dart';
     // await KeyValueStorageBase.init();
 
     
-    _initPlatformSpecificDepenedencies(); 
-
+   
     // For prettyifying console debug messages
     debugPrint = _prettifyDebugPrint;
 
     
       WidgetsFlutterBinding.ensureInitialized();
+       await PathProviderService.init();
+      await LocalDatabaseHiveService.init();
 
 
    
@@ -79,24 +80,6 @@ import 'core/locator.dart';
  
    
    
-
-  static void _initPlatformSpecificDepenedencies() async {
-
-    if(kIsWeb){
-
-
-    }
-    else {
-          // For preparing to read application directory paths
-    await PathProviderService.init();
-
-    // For preparing to read/write to the local storage
-    await LocalDatabaseHiveService.init();
-
-
-
-    }
-  }
 
   static void _prettifyDebugPrint(String? message, {int? wrapWidth}) {
     final date = clock.now();

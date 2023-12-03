@@ -28,71 +28,74 @@ class MovieScreenView extends ConsumerWidget {
                   preferredSize: Size(ScreenUtil().scaleWidth,
                       viewModel.isSearchBarOpened ? 80.h : 60.h),
                   // App bar containing title or search bar based on the state
-                  child: AppBar(
-                    centerTitle: false,
-                    title: AnimatedSwitcher(
-                        duration: AppDurations.animatedSwitcher,
-                        child: !viewModel.isSearchBarOpened
-                            ? Text(t.movie_screen.watch,
-                                style: AppTypography.primary.label16)
-                            : Container(
-                                // Search bar UI when opened
-                                height: 52.h,
-                                width: 400.w,
-                                decoration: BoxDecoration(
-                                  color: AppColors.fieldFillColor,
-                                  borderRadius: BorderRadius.circular(33),
-                                ),
-                                child: Center(
-                                  child: Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 15.w),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Icon(Icons.search),
-                                        SizedBox(
-                                          width: 250.w,
-                                          child: TextField(
-                                            onChanged: (value) {
-                                              viewModel.searchText = value;
-                                              viewModel.setEditingStatus(true);
-                                            },
-                                            onEditingComplete: () {},
-                                            decoration:
-                                                InputDecoration.collapsed(
-                                              hintText:
-                                                  t.movie_screen.searchHint,
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 10.h),
+                    child: AppBar(
+                      centerTitle: false,
+                      title: AnimatedSwitcher(
+                          duration: AppDurations.animatedSwitcher,
+                          child: !viewModel.isSearchBarOpened
+                              ? Text(t.movie_screen.watch,
+                                  style: AppTypography.primary.label16)
+                              : Container(
+                                  // Search bar UI when opened
+                                  height: 52.h,
+                                  width: 400.w,
+                                  decoration: BoxDecoration(
+                                    color: AppColors.fieldFillColor,
+                                    borderRadius: BorderRadius.circular(33),
+                                  ),
+                                  child: Center(
+                                    child: Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 15.w),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Icon(Icons.search),
+                                          SizedBox(
+                                            width: 250.w,
+                                            child: TextField(
+                                              onChanged: (value) {
+                                                viewModel.searchText = value;
+                                                viewModel.setEditingStatus(true);
+                                              },
+                                              onEditingComplete: () {},
+                                              decoration:
+                                                  InputDecoration.collapsed(
+                                                hintText:
+                                                    t.movie_screen.searchHint,
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                        IconButton(
-                                          icon: Icon(Icons.cancel_sharp),
-                                          onPressed: () {
-                                            viewModel.toggleSeachBar();
-                                            viewModel.setEditingStatus(false);
-                                          },
-                                        ),
-                                      ],
+                                          IconButton(
+                                            icon: Icon(Icons.cancel_sharp),
+                                            onPressed: () {
+                                              viewModel.toggleSeachBar();
+                                              viewModel.setEditingStatus(false);
+                                            },
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
+                                )),
+                      backgroundColor: AppColors.textWhiteColor,
+                      actions: [
+                        !viewModel.isSearchBarOpened
+                            ? Padding(
+                                padding: EdgeInsets.only(right: 20.w),
+                                child: IconButton(
+                                  icon: Icon(Icons.search),
+                                  onPressed: () {
+                                    viewModel.toggleSeachBar();
+                                  },
                                 ),
-                              )),
-                    backgroundColor: AppColors.textWhiteColor,
-                    actions: [
-                      !viewModel.isSearchBarOpened
-                          ? Padding(
-                              padding: EdgeInsets.only(right: 20.w),
-                              child: IconButton(
-                                icon: Icon(Icons.search),
-                                onPressed: () {
-                                  viewModel.toggleSeachBar();
-                                },
-                              ),
-                            )
-                          : Container()
-                    ],
+                              )
+                            : Container()
+                      ],
+                    ),
                   ),
                 ),
                 body: viewModel.getUpComingMovies(ref).when(

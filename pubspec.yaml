@@ -15,18 +15,15 @@ dependencies:
   change_app_package_name: ^1.1.0
   connectivity: ^3.0.6
   cupertino_icons: ^1.0.5
-  dio: ^5.1.0
+  dio: ^5.4.0
   dio_cache_interceptor: ^3.3.0
   dio_cache_interceptor_hive_store: ^3.2.0
   equatable: ^2.0.3
   
   eva_icons_flutter: ^3.1.0
   flutter_cache_manager: ^3.3.0
-  flutter_custom_clippers: ^2.0.0
-  flutter_isolate: ^2.0.2
   flutter_riverpod: ^2.3.2
   flutter_screenutil: ^5.9.0
-  flutter_spinkit: ^5.1.0
   flutter_staggered_animations: ^1.1.1
   font_awesome_flutter: ^10.1.0
   
@@ -44,11 +41,11 @@ dependencies:
   logger: ^1.1.0
  
  
-  path: null
-  path_provider: ^2.0.11
+  path: ^1.8.3
+  path_provider: ^2.1.1
   provider: ^6.0.3
   
-  # rive: ^0.10.3
+  youtube_player_flutter: ^8.1.2
   sentry_dio: ^7.2.0
   sentry_flutter: ^7.13.2
   

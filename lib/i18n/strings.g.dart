@@ -6,7 +6,7 @@
 /// Locales: 2
 /// Strings: 20 (10 per locale)
 ///
-/// Built on 2023-12-03 at 13:00 UTC
+/// Built on 2023-12-03 at 14:28 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -189,7 +189,7 @@ class _StringsMovieDetailScreenEn {
 	String get getTickets => 'Get Tickets';
 	String get watchTrailer => '  Watch Trailer';
 	String get genres => 'Genres';
-	String get Overview => 'Overview';
+	String get overview => 'Overview';
 }
 
 // Path: <root>
@@ -256,7 +256,7 @@ class _StringsMovieDetailScreenUr implements _StringsMovieDetailScreenEn {
 	@override String get getTickets => 'Get Tickets';
 	@override String get watchTrailer => '  Watch Trailer';
 	@override String get genres => 'Genres';
-	@override String get Overview => 'Overview';
+	@override String get overview => 'Overview';
 }
 
 /// Flat map(s) containing all translations.
@@ -274,7 +274,7 @@ extension on _StringsEn {
 			case 'movie_detail_screen.getTickets': return 'Get Tickets';
 			case 'movie_detail_screen.watchTrailer': return '  Watch Trailer';
 			case 'movie_detail_screen.genres': return 'Genres';
-			case 'movie_detail_screen.Overview': return 'Overview';
+			case 'movie_detail_screen.overview': return 'Overview';
 			default: return null;
 		}
 	}
@@ -292,7 +292,7 @@ extension on _StringsUr {
 			case 'movie_detail_screen.getTickets': return 'Get Tickets';
 			case 'movie_detail_screen.watchTrailer': return '  Watch Trailer';
 			case 'movie_detail_screen.genres': return 'Genres';
-			case 'movie_detail_screen.Overview': return 'Overview';
+			case 'movie_detail_screen.overview': return 'Overview';
 			default: return null;
 		}
 	}

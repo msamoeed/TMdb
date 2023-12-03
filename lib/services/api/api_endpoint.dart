@@ -26,12 +26,14 @@ class ApiEndpoint {
 
   /// Returns the path for movies [endpoint].
 
-  static String movies(Movies endpoint) {
+  static String movies({required Movies endpoint, String? payload}) {
     switch (endpoint) {
       case Movies.UPCOMING_MOVIES:
         return '/movie/upcoming';
       case Movies.MOVIE_GENRES:
-        return '/genre/movie/list';  
+        return '/genre/movie/list';
+      case Movies.MOVIE_VIDEOS:
+        return '/movie/${payload}/videos';
       default:
         return '/movie/upcoming';
     }
@@ -42,5 +44,6 @@ class ApiEndpoint {
 enum Movies {
   /// An endpoint for today's usage requests.
   UPCOMING_MOVIES,
-  MOVIE_GENRES
+  MOVIE_GENRES,
+  MOVIE_VIDEOS
 }
