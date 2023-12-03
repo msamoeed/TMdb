@@ -38,10 +38,7 @@ class MovieDetailsScreenViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  // disposePlayer(){
-  //   controller.dispose();
-  // }
-  
+ 
 
   AsyncValue<MovieVideos?> getVideos(ref) {
     return ref.watch(getVideoList);

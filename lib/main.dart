@@ -24,8 +24,7 @@ void main() async {
   var lang = GetStorage().read<String>("user-language");
   //Setting language
   LocaleSettings.setLocaleRaw(lang.toString());
-  //Setting firebase-crashlytics
-  // FirebasePerformance.instance.setPerformanceCollectionEnabled(true);
+  
   
   await AppBootstrapper.init(
     mainAppWidget: ProviderScope(child: TranslationProvider(child: MyApp())),
