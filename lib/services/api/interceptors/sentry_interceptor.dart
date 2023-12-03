@@ -19,7 +19,7 @@ class SentryInterceptor extends InterceptorsWrapper {
   }
 
   @override
-  void onError(DioError err, ErrorInterceptorHandler handler) {
+  void onError(DioException err, ErrorInterceptorHandler handler) {
     Sentry.addBreadcrumb(
       Breadcrumb(
         type: 'http',
@@ -37,34 +37,34 @@ class SentryInterceptor extends InterceptorsWrapper {
 }
 
 class DioErrorHandler {
-  static String dioErrorToString(DioError dioError) {
+  static String dioErrorToString(DioException dioError) {
     String errorText;
     switch (dioError.type) {
-      case DioErrorType.connectionError:
+      case DioExceptionType.connectionError:
         errorText = "Connection Error";
         break;
 
-      case DioErrorType.badCertificate:
+      case DioExceptionType.badCertificate:
         errorText = "Bad certificate";
         break;
 
-      case DioErrorType.connectionTimeout:
+      case DioExceptionType.connectionTimeout:
         errorText =
             "Connection Timeout. Check your Internet connection or contact Server adiministrator";
         break;
-      case DioErrorType.receiveTimeout:
-      case DioErrorType.sendTimeout:
+      case DioExceptionType.receiveTimeout:
+      case DioExceptionType.sendTimeout:
         errorText =
             "Connection lost, please check your internet connection and try again.";
         break;
-      case DioErrorType.badResponse:
+      case DioExceptionType.badResponse:
         errorText = _errorBaseOnHttpStatusCode(dioError);
         break;
-      case DioErrorType.unknown:
+      case DioExceptionType.unknown:
         errorText =
             "Connection lost, please check your internet connection and try again.";
         break;
-      case DioErrorType.cancel:
+      case DioExceptionType.cancel:
         errorText =
             "Connection lost, please check your internet connection and try again.";
         break;
@@ -72,7 +72,7 @@ class DioErrorHandler {
     return errorText;
   }
 
-  static String _errorBaseOnHttpStatusCode(DioError dioError) {
+  static String _errorBaseOnHttpStatusCode(DioException dioError) {
     String errorText;
     if (dioError.response != null) {
       if (dioError.response?.statusCode == 401) {

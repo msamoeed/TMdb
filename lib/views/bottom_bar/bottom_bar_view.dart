@@ -65,15 +65,4 @@ class BottomBarView extends StatelessWidget {
   }
 }
 
-class ThemeAwareText extends StatelessWidget {
-  final String text;
-  const ThemeAwareText(this.text, {Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Text(text,
-        style: TextStyle(
-          color: Theme.of(context).textTheme.bodySmall?.color,
-        ));
-  }
-}

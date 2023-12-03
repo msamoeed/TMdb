@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 6 (3 per locale)
+/// Strings: 8 (4 per locale)
 ///
-/// Built on 2023-12-02 at 12:17 UTC
+/// Built on 2023-12-03 at 07:17 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -173,6 +173,7 @@ class _StringsMovieScreenEn {
 	// Translations
 	String get watch => 'Watch';
 	String get searchHint => 'TV shows, movies and more';
+	String get topResults => 'Top Results';
 }
 
 // Path: <root>
@@ -223,6 +224,7 @@ class _StringsMovieScreenUr implements _StringsMovieScreenEn {
 	// Translations
 	@override String get watch => 'Watch';
 	@override String get searchHint => 'TV shows, movies and more';
+	@override String get topResults => 'Top Results';
 }
 
 /// Flat map(s) containing all translations.
@@ -234,6 +236,7 @@ extension on _StringsEn {
 			case 'common.pleaseWait': return 'Please Wait';
 			case 'movie_screen.watch': return 'Watch';
 			case 'movie_screen.searchHint': return 'TV shows, movies and more';
+			case 'movie_screen.topResults': return 'Top Results';
 			default: return null;
 		}
 	}
@@ -245,6 +248,7 @@ extension on _StringsUr {
 			case 'common.pleaseWait': return 'Please Wait';
 			case 'movie_screen.watch': return 'Watch';
 			case 'movie_screen.searchHint': return 'TV shows, movies and more';
+			case 'movie_screen.topResults': return 'Top Results';
 			default: return null;
 		}
 	}

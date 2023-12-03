@@ -5,7 +5,8 @@
     
    "movie_screen" : {
     "watch" : "Watch",
-    "searchHint" : "TV shows, movies and more"
+    "searchHint" : "TV shows, movies and more",
+    "topResults" : "Top Results"
    
    }
 }

@@ -30,6 +30,8 @@ class ApiEndpoint {
     switch (endpoint) {
       case Movies.UPCOMING_MOVIES:
         return '/movie/upcoming';
+      case Movies.MOVIE_GENRES:
+        return '/genre/movie/list';  
       default:
         return '/movie/upcoming';
     }
@@ -40,4 +42,5 @@ class ApiEndpoint {
 enum Movies {
   /// An endpoint for today's usage requests.
   UPCOMING_MOVIES,
+  MOVIE_GENRES
 }

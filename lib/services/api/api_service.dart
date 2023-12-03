@@ -191,7 +191,7 @@ class ApiService implements ApiInterface {
         ),
         cancelToken: cancelToken,
       );
-    } on DioError catch (ex) {
+    } on DioException catch (ex) {
         
       throw CustomException.fromDioException(ex);
     }

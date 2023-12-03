@@ -75,6 +75,10 @@ class AppColors {
   /// The color value for rating stars in the app.
   static const Color starsColor = Color.fromARGB(255, 247, 162, 64);
 
+
+  /// The color value for divider in the app.
+  static const Color dividerColor = Color(0xFF000000);
+
   /// The color value for dark grey skeleton containers in the app.
   static const Color darkSkeletonColor = Color(0xFF656565);
 
@@ -86,7 +90,6 @@ class AppColors {
 
   /// The color value for light grey borders in the app.
   static const Color lightOutlineColor = Color.fromARGB(255, 224, 224, 224);
-
 
   /// The red [LinearGradient] for buttons in the app.
   static Gradient buttonGradientRed = LinearGradient(
@@ -161,7 +164,8 @@ class AppColors {
   static const neoTopShadowColorDark = Color(0xff202020);
   static const neoBottomShadowColorDark = Color(0xff282828);
 
-  static const buttonColor = Color(0xff004267);
+   /// The color value for buttons grey  in the app.
+  static const Color buttonColor = Color.fromRGBO(97, 195, 242, 1);
 
   static const backgroundScaffoldColor = Color(0xffD1E0F4);
   static const tileColor = Color(0xffFFFFFF);

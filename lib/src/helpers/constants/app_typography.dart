@@ -40,7 +40,7 @@ class     AppTypography {
       fontWeight: FontWeight.w600,
     ),
     title18: _poppins.copyWith(
-      color: AppColors.textWhiteColor,
+      color: AppColors.textBlackColor,
       fontSize: 18,
      
     ),

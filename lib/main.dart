@@ -43,7 +43,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    var isDark = GetStorage().read<String>("user-theme") == "dark";
+    // var isDark = GetStorage().read<String>("user-theme") == "dark";
     
 
     return ThemeProvider(
