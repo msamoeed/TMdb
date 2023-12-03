@@ -12,7 +12,8 @@ This Flutter app lists upcoming movies using The Movie Db API (TMdb) and allows 
 
 - [Dio](https://pub.dev/packages/dio) for HTTP requests
 - [Hive](https://pub.dev/packages/hive) for caching
-- [Stacked](https://pub.dev/packages/stacked) for state management
+- [Stacked](https://pub.dev/packages/stacked) as architecture
+- [Riverpods](https://pub.dev/packages/flutter_riverpod) for statemanagement
 - [youtube_player_flutter](https://pub.dev/packages/youtube_player_flutter) for playing YouTube videos
 - [cache_network_image](https://pub.dev/packages/cached_network_image) for caching images
 - [flutter_staggered_animations](https://pub.dev/packages/flutter_staggered_animations) for staggered animation of listviews and gridviews
