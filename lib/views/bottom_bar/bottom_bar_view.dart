@@ -32,30 +32,53 @@ class BottomBarView extends StatelessWidget {
                 onTap: (val) => viewModel.setIndex(val),
                 type: BottomNavigationBarType.fixed,
                 //add background color
-                selectedLabelStyle:AppTypography.darkprimary.label11 ,
-                unselectedLabelStyle:AppTypography.darkprimary.label11.copyWith(color: AppColors.appBarIconLight) ,
+                selectedLabelStyle: AppTypography.darkprimary.label11,
+                unselectedLabelStyle: AppTypography.darkprimary.label11
+                    .copyWith(color: AppColors.appBarIconLight),
                 backgroundColor: AppColors.primaryColor,
                 items: const <BottomNavigationBarItem>[
                   BottomNavigationBarItem(
-                   icon: Icon(EvaIcons.home,color: AppColors.appBarIconLight,),
-                    activeIcon:  Icon(EvaIcons.home,color: AppColors.textWhiteColor,),
+                    icon: Icon(
+                      EvaIcons.home,
+                      color: AppColors.appBarIconLight,
+                    ),
+                    activeIcon: Icon(
+                      EvaIcons.home,
+                      color: AppColors.textWhiteColor,
+                    ),
                     label: 'Dashboard',
                   ),
                   BottomNavigationBarItem(
-                    icon: Icon(EvaIcons.playCircle,color: AppColors.appBarIconLight,),
-                    activeIcon:  Icon(EvaIcons.playCircle,color: AppColors.textWhiteColor,),
+                    icon: Icon(
+                      EvaIcons.playCircle,
+                      color: AppColors.appBarIconLight,
+                    ),
+                    activeIcon: Icon(
+                      EvaIcons.playCircle,
+                      color: AppColors.textWhiteColor,
+                    ),
                     label: 'Watch',
                   ),
                   BottomNavigationBarItem(
-                    icon: Icon(Icons.library_add,color: AppColors.appBarIconLight,),
-                    activeIcon: Icon(Icons.library_add,color: AppColors.textWhiteColor,),
-
+                    icon: Icon(
+                      Icons.library_add,
+                      color: AppColors.appBarIconLight,
+                    ),
+                    activeIcon: Icon(
+                      Icons.library_add,
+                      color: AppColors.textWhiteColor,
+                    ),
                     label: 'Media Library',
                   ),
-                   BottomNavigationBarItem(
-                    icon: Icon(EvaIcons.moreHorizontal, color: AppColors.appBarIconLight,),
-                    activeIcon: Icon(EvaIcons.moreHorizontal, color: AppColors.textWhiteColor,),
-
+                  BottomNavigationBarItem(
+                    icon: Icon(
+                      EvaIcons.moreHorizontal,
+                      color: AppColors.appBarIconLight,
+                    ),
+                    activeIcon: Icon(
+                      EvaIcons.moreHorizontal,
+                      color: AppColors.textWhiteColor,
+                    ),
                     label: 'More',
                   ),
                 ],
@@ -71,5 +94,3 @@ class BottomBarView extends StatelessWidget {
     );
   }
 }
-
-
