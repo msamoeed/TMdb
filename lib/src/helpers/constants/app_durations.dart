@@ -9,5 +9,6 @@ class AppDurations {
   //Icons
 
   static const Duration animatedSwitcher = Duration(milliseconds: 600);
+  static const Duration staggeredAnimation = const Duration(milliseconds: 375);
   
 }
