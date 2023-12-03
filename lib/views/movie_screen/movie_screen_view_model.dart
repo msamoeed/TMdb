@@ -26,7 +26,7 @@ class MovieScreenViewModel extends BaseViewModel {
   // Method to filter a list of Results based on a search term
   List<Results> searchList(List<Results>? words, String searchTerm) {
     List<Results> result =
-        words!.where((Results word) => word.title!.contains(searchTerm)).toList();
+        words!.where((Results word) => word.title!.toLowerCase().contains(searchTerm.toLowerCase())).toList();
     return result;
   }
 
