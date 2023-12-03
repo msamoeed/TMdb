@@ -23,17 +23,12 @@ This Flutter app lists upcoming movies using The Movie Db API (TMdb) and allows 
 
 ## Screenshots
 
-![Upcoming Movies](screenshots/upcoming_movies.png)
-*Upcoming Movies Screen*
-
-![Movie Details](screenshots/movie_details.png)
-*Movie Details Screen*
-
-![Movie Details](screenshots/movie_details_grid.png)
-*Movie Details Screen Grid*
-
-![Search Movie](screenshots/dashboard.png)
-*Search Screen*
+<p align="center">
+  <img src="screenshots/upcoming_movies.png" alt="Upcoming Movies" width="200"/>
+  <img src="screenshots/movie_details.png" alt="Movie Details" width="200"/>
+  <img src="screenshots/movie_details_grid.png" alt="Book Tickets" width="200"/>
+   <img src="screenshots/dashboard.png" alt="Book Tickets" width="200"/>
+</p>
 
 ## Installation
 
