@@ -67,6 +67,9 @@ import 'core/locator.dart';
     await SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
+      DeviceOrientation.landscapeLeft,
+       DeviceOrientation.landscapeRight,
+
     ]);
   }
 

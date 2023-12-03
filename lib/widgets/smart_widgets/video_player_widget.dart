@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 import '../../views/movie_details_screen/movie_details_view_model.dart';
+import 'movie_button.dart';
 
 class MyVideoPlayer extends ConsumerWidget {
   final MovieDetailsScreenViewModel movieViewModel;
@@ -18,7 +19,9 @@ class MyVideoPlayer extends ConsumerWidget {
             initialVideoId: data!.results![0].key.toString(),
             flags: YoutubePlayerFlags(
               autoPlay: true,
+              showLiveFullscreenButton: true,
               mute: true,
+              
             ),
           );
           return YoutubePlayerBuilder(
@@ -26,7 +29,18 @@ class MyVideoPlayer extends ConsumerWidget {
                 controller: controller,
               ),
               builder: (context, player) {
-                return player;
+                return Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: MovieButton(isTransparent: true, text: "Done", onTap: (){
+                       // controller.dispose();
+                        movieViewModel.stopVideo();
+                      },),
+                    ),
+                    player,
+                  ],
+                );
               });
         },
         error: (error, stack) => Text(error.toString()),
