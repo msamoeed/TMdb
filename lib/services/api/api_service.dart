@@ -110,7 +110,7 @@ class ApiService implements ApiInterface {
     CancelToken? cancelToken,
     CachePolicy? cachePolicy,
     int? cacheAgeDays,
-    bool requiresAuthToken = true,
+    bool requiresApiKey = true,
     required T Function(JSON response) converter,
   }) async {
     JSON body;
@@ -127,7 +127,7 @@ class ApiService implements ApiInterface {
         ),
         options: Options(
           extra: <String, Object?>{
-            'requiresAuthToken': requiresAuthToken,
+            'requiresApiKey': requiresApiKey,
           },
         ),
         cancelToken: cancelToken,
@@ -191,7 +191,7 @@ class ApiService implements ApiInterface {
         ),
         cancelToken: cancelToken,
       );
-    } on DioError catch (ex) {
+    } on DioException catch (ex) {
         
       throw CustomException.fromDioException(ex);
     }

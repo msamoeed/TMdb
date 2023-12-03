@@ -1,9 +1,12 @@
 /// Generated file. Do not edit.
 ///
-/// Locales: 2
-/// Strings: 14 (7 per locale)
+/// Original: lib/i18n
+/// To regenerate, run: `dart run slang`
 ///
-/// Built on 2023-04-10 at 22:18 UTC
+/// Locales: 2
+/// Strings: 8 (4 per locale)
+///
+/// Built on 2023-12-03 at 07:17 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -148,7 +151,7 @@ class _StringsEn implements BaseTranslations<AppLocale, _StringsEn> {
 
 	// Translations
 	late final _StringsCommonEn common = _StringsCommonEn._(_root);
-	late final _StringsLoginScreenEn login_screen = _StringsLoginScreenEn._(_root);
+	late final _StringsMovieScreenEn movie_screen = _StringsMovieScreenEn._(_root);
 }
 
 // Path: common
@@ -161,19 +164,16 @@ class _StringsCommonEn {
 	String get pleaseWait => 'Please Wait';
 }
 
-// Path: login_screen
-class _StringsLoginScreenEn {
-	_StringsLoginScreenEn._(this._root);
+// Path: movie_screen
+class _StringsMovieScreenEn {
+	_StringsMovieScreenEn._(this._root);
 
 	final _StringsEn _root; // ignore: unused_field
 
 	// Translations
-	String get login => 'Login';
-	String get password => 'Password';
-	String get username => 'Username';
-	String get cannotSignIn => 'Cannot Sign In?';
-	String get rememberMe => 'Remember Me';
-	String get signIn => 'Sign In';
+	String get watch => 'Watch';
+	String get searchHint => 'TV shows, movies and more';
+	String get topResults => 'Top Results';
 }
 
 // Path: <root>
@@ -202,7 +202,7 @@ class _StringsUr implements _StringsEn {
 
 	// Translations
 	@override late final _StringsCommonUr common = _StringsCommonUr._(_root);
-	@override late final _StringsLoginScreenUr login_screen = _StringsLoginScreenUr._(_root);
+	@override late final _StringsMovieScreenUr movie_screen = _StringsMovieScreenUr._(_root);
 }
 
 // Path: common
@@ -212,22 +212,19 @@ class _StringsCommonUr implements _StringsCommonEn {
 	@override final _StringsUr _root; // ignore: unused_field
 
 	// Translations
-	@override String get pleaseWait => 'براہ کرم انتظار کریں';
+	@override String get pleaseWait => 'Please Wait';
 }
 
-// Path: login_screen
-class _StringsLoginScreenUr implements _StringsLoginScreenEn {
-	_StringsLoginScreenUr._(this._root);
+// Path: movie_screen
+class _StringsMovieScreenUr implements _StringsMovieScreenEn {
+	_StringsMovieScreenUr._(this._root);
 
 	@override final _StringsUr _root; // ignore: unused_field
 
 	// Translations
-	@override String get login => 'لاگ ان';
-	@override String get password => 'پاس ورڈ';
-	@override String get username => 'صارف نام';
-	@override String get cannotSignIn => 'لاگ ان نہیں ہو سکتا؟';
-	@override String get rememberMe => 'مجھے یاد رکھیں';
-	@override String get signIn => 'لاگ ان کریں';
+	@override String get watch => 'Watch';
+	@override String get searchHint => 'TV shows, movies and more';
+	@override String get topResults => 'Top Results';
 }
 
 /// Flat map(s) containing all translations.
@@ -237,12 +234,9 @@ extension on _StringsEn {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
 			case 'common.pleaseWait': return 'Please Wait';
-			case 'login_screen.login': return 'Login';
-			case 'login_screen.password': return 'Password';
-			case 'login_screen.username': return 'Username';
-			case 'login_screen.cannotSignIn': return 'Cannot Sign In?';
-			case 'login_screen.rememberMe': return 'Remember Me';
-			case 'login_screen.signIn': return 'Sign In';
+			case 'movie_screen.watch': return 'Watch';
+			case 'movie_screen.searchHint': return 'TV shows, movies and more';
+			case 'movie_screen.topResults': return 'Top Results';
 			default: return null;
 		}
 	}
@@ -251,13 +245,10 @@ extension on _StringsEn {
 extension on _StringsUr {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
-			case 'common.pleaseWait': return 'براہ کرم انتظار کریں';
-			case 'login_screen.login': return 'لاگ ان';
-			case 'login_screen.password': return 'پاس ورڈ';
-			case 'login_screen.username': return 'صارف نام';
-			case 'login_screen.cannotSignIn': return 'لاگ ان نہیں ہو سکتا؟';
-			case 'login_screen.rememberMe': return 'مجھے یاد رکھیں';
-			case 'login_screen.signIn': return 'لاگ ان کریں';
+			case 'common.pleaseWait': return 'Please Wait';
+			case 'movie_screen.watch': return 'Watch';
+			case 'movie_screen.searchHint': return 'TV shows, movies and more';
+			case 'movie_screen.topResults': return 'Top Results';
 			default: return null;
 		}
 	}

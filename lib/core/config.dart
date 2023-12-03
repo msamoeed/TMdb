@@ -18,9 +18,14 @@ class Config {
   /// ```
   static const baseUrl = String.fromEnvironment(
     'BASE_URL',
-    defaultValue: 'https://api.themoviedb.org',
-    //defaultValue: "http://localhost:3004"
+    defaultValue: 'https://api.themoviedb.org/3',
   );
+
+   static const imageUrl = String.fromEnvironment(
+    'IMAGE_BASE_URL',
+    defaultValue: 'https://image.tmdb.org/t/p/w500',
+  );
+
 
   /// The client key for sentry SDK. The DSN tells the SDK where to
   /// send the events to.

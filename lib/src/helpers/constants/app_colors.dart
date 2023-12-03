@@ -36,7 +36,7 @@ class AppColors {
       Color.fromRGBO(158, 158, 158, 1);
 
   /// The main color used for theming the app.
-  static const Color primaryColor = Colors.black;
+  static const Color primaryColor = Color(0xFF2E2739);
 
   //The error color used for error messages.
   static const Color errorColor = Color(0xFFd45050);
@@ -54,11 +54,11 @@ class AppColors {
 
   /// The light greyish color used for background surfaces
   /// of the app like behind scrolling screens or scaffolds etc.
-  static const Color lightBackgroundColor =  Color(0xfff2f2f2);
+  static const Color lightBackgroundColor =  Color(0xFFF6F6Fa);
 
   /// The darker greyish color used for background surfaces
   /// of the app like behind scrolling screens or scaffolds etc.
-  static const Color backgroundColor = Colors.white;
+  static const Color backgroundColor = Color(0xFFF6F6FA);
 
   static const Color darkBackgroundColor = Color(0xff242424);
 
@@ -67,13 +67,17 @@ class AppColors {
   static const Color surfaceColor = Color.fromARGB(255, 253, 253, 253);
 
   /// The light greyish color used for filling fields of the app.
-  static const Color fieldFillColor = Color.fromARGB(255, 235, 235, 235);
+  static const Color fieldFillColor = Color(0xFFEAE9EB);
 
   /// The color value for red color in the app.
   static const Color redColor = Color(0xFFed0000);
 
   /// The color value for rating stars in the app.
   static const Color starsColor = Color.fromARGB(255, 247, 162, 64);
+
+
+  /// The color value for divider in the app.
+  static const Color dividerColor = Color(0xFF000000);
 
   /// The color value for dark grey skeleton containers in the app.
   static const Color darkSkeletonColor = Color(0xFF656565);
@@ -160,7 +164,8 @@ class AppColors {
   static const neoTopShadowColorDark = Color(0xff202020);
   static const neoBottomShadowColorDark = Color(0xff282828);
 
-  static const buttonColor = Color(0xff004267);
+   /// The color value for buttons grey  in the app.
+  static const Color buttonColor = Color.fromRGBO(97, 195, 242, 1);
 
   static const backgroundScaffoldColor = Color(0xffD1E0F4);
   static const tileColor = Color(0xffFFFFFF);

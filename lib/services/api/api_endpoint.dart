@@ -24,90 +24,23 @@ class ApiEndpoint {
   /// ```
   static const baseUrl = Config.baseUrl;
 
-  /// Returns the path for an authentication [endpoint].
-  
+  /// Returns the path for movies [endpoint].
 
-  
-
-  static String authentication(Authentication endpoint) {
+  static String movies(Movies endpoint) {
     switch (endpoint) {
-      case Authentication.USER_LOGIN:
-        return '/authService/100000002/login';
-       case Authentication.GET_PRELOGIN_CAMPAIGNS:
-        return '/services/data/v1/CampaignEngine/operations/Campaigns/getPreLoginCampaigns'; 
-      case Authentication.VERIFY_LOGIN_OTP:
-        return '/services/data/v1/Login/operations/Users_2/verifyLoginMFAOTP';
-      case Authentication.POST_LOGIN_USERPROFILE:
-        return '/authService/100000002/login/mfa';
-      case Authentication.CAPTCHA:
-        return '/services/data/v1/Login/operations/Security/generateCaptcha';  
+      case Movies.UPCOMING_MOVIES:
+        return '/movie/upcoming';
+      case Movies.MOVIE_GENRES:
+        return '/genre/movie/list';  
+      default:
+        return '/movie/upcoming';
     }
   }
-
-   static String holding(Holding endpoint) {
-    switch (endpoint) {
-      case Holding.GET_ACCOUNTS_LIST:
-        return '/services/data/v1/Holdings/operations/DigitalArrangements/getList';
-       
-    }
-  }
-
-  static String onboarding(Onboaridng endpoint) {
-    switch (endpoint) {
-      case Onboaridng.GET_CUSTOMER_TYPE:
-        return '/services/SelfOnboardingJavaServices/getCustTypes';
-       
-    }
-  }
-  
-  /// Returns the path for a student [endpoint].
-  ///
-  /// Specify student [erp] to get the path for a specific student.
-  ///
-  /// Specify secondary [extendedResourceId] to get the path for a specific secondary resource.
-
 }
 
-/// A collection of endpoints used for authentication purposes.
-enum DailyData {
+/// A collection of endpoints used for getting movies purposes.
+enum Movies {
   /// An endpoint for today's usage requests.
-  USAGE_TODAY_KWH,
-
-  /// An endpoint for today's eletricity cost requests.
-  COST_TODAY,
-
-  /// An endpoint for last known wattage requests.
-  LAST_KNOWN_WATTAGE,
-
-  /// An endpoint for change password requests.
-  BILL_THIS_MONTH,
-
-  USAGE_TODAY_GRAPH,
-
-  // An endpoint for fetching daily usage goal
-  DAILY_GOAL
+  UPCOMING_MOVIES,
+  MOVIE_GENRES
 }
-
-enum Core {
-  /// An endpoint for today's usage requests.
-  GET_BILLING_COMPANY,
-  SAVE_USER_TERRIF
-}
-
-enum Authentication { 
-  /// An endpoint for today's usage requests.
-  USER_LOGIN,
-  GET_PRELOGIN_CAMPAIGNS,
-  VERIFY_LOGIN_OTP,
-  POST_LOGIN_USERPROFILE,
-  CAPTCHA,
-
- }
-
- enum Holding {
-  GET_ACCOUNTS_LIST
- }
-
- enum Onboaridng {
-  GET_CUSTOMER_TYPE
- }

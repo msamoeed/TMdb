@@ -52,7 +52,7 @@ abstract class ApiInterface {
     required String endpoint,
     JSON? queryParams,
     CancelToken? cancelToken,
-    bool requiresAuthToken = true,
+    bool requiresApiKey = true,
     required T Function(JSON responseBody) converter,
   });
 

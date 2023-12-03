@@ -1,6 +1,5 @@
 // Helpers
 
-import '../../src/helpers/constants/app_utils.dart';
 import '../../src/helpers/typedefs.dart';
 
 class ResponseModel<T> {

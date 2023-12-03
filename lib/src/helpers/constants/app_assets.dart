@@ -8,7 +8,7 @@ class AppAssets {
 
   //Icons
 
-  static const String appLogo = 'assets/e-logo.png';
+  static const String appLogo = 'assets/appLogo.png';
   static const String changePassword = 'assets/change-password.png';
  
 }
