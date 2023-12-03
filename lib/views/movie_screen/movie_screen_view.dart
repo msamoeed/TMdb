@@ -98,23 +98,33 @@ class MovieScreenView extends ConsumerWidget {
                     padding: EdgeInsets.only(top: 15.h),
                     child: !viewModel.isSearchBarOpened || viewModel.isTyping
                         ? Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                           viewModel.isSearchBarOpened && viewModel.isTyping?  Padding(
-                             padding: EdgeInsets.symmetric(horizontal: 25.w),
-                             child: Text(t.movie_screen.topResults, style: AppTypography.primary.label12.copyWith(fontWeight: FontWeight.w800),),
-                           ) : Container(),
-                          viewModel.isSearchBarOpened && viewModel.isTyping?  Divider(
-                            indent: 20,
-                            endIndent: 20,
-                            color: AppColors.dividerColor,
-                           ) : Container(),
-                            Flexible(
-                              child: ListView.builder(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              viewModel.isSearchBarOpened && viewModel.isTyping
+                                  ? Padding(
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 25.w),
+                                      child: Text(
+                                        t.movie_screen.topResults,
+                                        style: AppTypography.primary.label12
+                                            .copyWith(
+                                                fontWeight: FontWeight.w800),
+                                      ),
+                                    )
+                                  : Container(),
+                              viewModel.isSearchBarOpened && viewModel.isTyping
+                                  ? Divider(
+                                      indent: 20,
+                                      endIndent: 20,
+                                      color: AppColors.dividerColor,
+                                    )
+                                  : Container(),
+                              Flexible(
+                                child: ListView.builder(
                                   itemCount: viewModel.isTyping
                                       ? viewModel
-                                          .searchList(
-                                              data!.results, viewModel.searchText)
+                                          .searchList(data!.results,
+                                              viewModel.searchText)
                                           .length
                                       : data!.results!.length,
                                   itemBuilder: (context, count) {
@@ -123,7 +133,7 @@ class MovieScreenView extends ConsumerWidget {
                                       padding: const EdgeInsets.all(15),
                                       child: viewModel.isTyping
                                           ? MovieCard(
-                                            viewModel: viewModel,
+                                              viewModel: viewModel,
                                               height: 140,
                                               movie: viewModel.searchList(
                                                   data.results,
@@ -131,7 +141,7 @@ class MovieScreenView extends ConsumerWidget {
                                               isHorizontal: true,
                                             )
                                           : MovieCard(
-                                            viewModel: viewModel,
+                                              viewModel: viewModel,
                                               height: 180,
                                               movie: data.results![count],
                                               isHorizontal: false,
@@ -139,14 +149,16 @@ class MovieScreenView extends ConsumerWidget {
                                     );
                                   },
                                 ),
-                            ),
-                          ],
-                        )
+                              ),
+                            ],
+                          )
                         : GridView.builder(
                             itemCount: data!.results!.length,
                             gridDelegate:
                                 SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: 2,
+                              childAspectRatio: 1.1
+                           
                             ),
                             itemBuilder: (context, count) {
                               // Display MovieCard in a grid view

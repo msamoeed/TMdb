@@ -10,28 +10,41 @@ import '../../models/upcoming_movies.dart';
 import '../../views/movie_screen/movie_screen_view_model.dart';
 
 class MovieCard extends ConsumerWidget {
+  // The height of the movie card
   final double height;
+
+  // The movie data for the card
   final Results movie;
+
+  // Flag to determine if the card should be displayed horizontally or not
   final bool isHorizontal;
+
+  // ViewModel for movie-related operations
   final MovieScreenViewModel viewModel;
 
-  MovieCard(
-      {super.key,
-      required this.height,
-      required this.movie,
-      required this.isHorizontal,
-      required this.viewModel});
+  // Constructor for the MovieCard widget
+  MovieCard({
+    super.key,
+    required this.height,
+    required this.movie,
+    required this.isHorizontal,
+    required this.viewModel,
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // Check if the card is horizontal or not
     return isHorizontal
         ? viewModel.getMoviesGenres(ref).when(
-            data: (data) => Container(
-                  height: height,
-                  child: Row(
-                    children: [
-                      Expanded(
-                          child: Container(
+              // If data is available
+              data: (data) => Container(
+                height: height,
+                child: Row(
+                  children: [
+                    // Left side with movie poster
+                    Expanded(
+                      flex: 2,
+                      child: Container(
                         decoration: BoxDecoration(
                           shape: BoxShape.rectangle,
                           borderRadius: BorderRadius.circular(15.r),
@@ -41,45 +54,58 @@ class MovieCard extends ConsumerWidget {
                                 '${Config.imageUrl}${(movie.posterPath).toString()}'),
                           ),
                         ),
-                      )),
-                      Expanded(
-                          flex: 2,
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  movie.title.toString(),
-                                  style: AppTypography.primary.title18,
-                                ),
-                                Text(
-                                  HelperMethods.getGenreNamesByIds(
-                                          movie.genreIds, data!.genres)
-                                      .toList()
-                                      .first,
-                                  style: AppTypography.primary.label12.copyWith(
-                                      color: AppColors.lightSkeletonColor),
-                                )
-                                // Text(movie.ge)
-                              ],
+                      ),
+                    ),
+                    // Right side with movie details
+                    Expanded(
+                      flex: 2,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            // Movie title
+                            Text(
+                              movie.title.toString(),
+                              style: AppTypography.primary.title18.copyWith(fontWeight: FontWeight.w800),
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 2,
                             ),
-                          )),
-                      IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.more_horiz,
-                            color: AppColors.buttonColor,
-                            size: 28,
-                          ))
-                    ],
-                  ),
+                            // First genre name
+                            Text(
+                              overflow: TextOverflow.ellipsis,
+                              HelperMethods.getGenreNamesByIds(
+                                      movie.genreIds, data!.genres)
+                                  .toList()
+                                  .first,
+                              style: AppTypography.primary.label12.copyWith(
+                                  color: AppColors.lightSkeletonColor),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    // More options button
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.more_horiz,
+                        color: AppColors.buttonColor,
+                        size: 28,
+                      ),
+                    ),
+                  ],
                 ),
-            error: (error, stack) => Text("Error"),
-            loading: () => Center(
-                  child: Container(),
-                ))
+              ),
+              // If there is an error fetching data
+              error: (error, stack) => Text("Error"),
+              // While data is still loading
+              loading: () => Center(
+                child: Container(),
+              ),
+            )
+        // If the card is not horizontal
         : Container(
             height: height,
             width: double.infinity,
@@ -95,13 +121,15 @@ class MovieCard extends ConsumerWidget {
             child: Align(
               alignment: Alignment.bottomLeft,
               child: Padding(
-                padding: const EdgeInsets.all(15),
+                padding: const EdgeInsets.all(20),
                 child: Text(
                   (movie.title).toString(),
-                  style: AppTypography.darkprimary.title18,
+                   overflow: TextOverflow.ellipsis,
+                              maxLines: 2,
+                  style: AppTypography.darkprimary.title18.copyWith(fontWeight: FontWeight.w800),
                 ),
               ),
-            ) // Foreground widget here
-            );
+            ),
+          ); // Foreground widget here
   }
 }
