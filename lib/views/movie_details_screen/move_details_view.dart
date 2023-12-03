@@ -8,6 +8,7 @@ import 'package:stacked/stacked.dart';
 
 import '../../i18n/strings.g.dart';
 import '../../src/helpers/constants/app_typography.dart';
+import '../../widgets/smart_widgets/movie_button.dart';
 
 class MovieDetailsScreenView extends StatelessWidget {
   @override
@@ -18,70 +19,90 @@ class MovieDetailsScreenView extends StatelessWidget {
         return Scaffold(
           extendBodyBehindAppBar: true,
           appBar: AppBar(
-             backgroundColor: Colors.transparent,
+            backgroundColor: Colors.transparent,
             centerTitle: false,
             leading: IconButton(
               onPressed: () => Navigator.pop(context),
-              icon: Icon(Icons.arrow_back_ios_new, color: AppColors.textWhiteColor,),
+              icon: Icon(
+                Icons.arrow_back_ios_new,
+                color: AppColors.textWhiteColor,
+              ),
             ),
             title: Text(t.movie_screen.watch,
                 style: AppTypography.darkprimary.label16),
           ),
           body: Column(
             children: [
-             
-              Container(
-                height: 550.h,
-                 decoration: BoxDecoration(
-                              shape: BoxShape.rectangle,
-
-                              image: DecorationImage(
-                                fit: BoxFit.fill,
-                                image: CachedNetworkImageProvider(
-                                    '${Config.imageUrl}${(viewModel.movieDetails.movie.posterPath).toString()}'),
+              Hero(
+                tag: viewModel.movieDetails.movie.id.toString(),
+                child: Container(
+                  height: 550.h,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    image: DecorationImage(
+                      fit: BoxFit.fill,
+                      image: CachedNetworkImageProvider(
+                          '${Config.imageUrl}${(viewModel.movieDetails.movie.posterPath).toString()}'),
+                    ),
+                  ),
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
+                          '${t.movie_detail_screen.releaseDate} ${viewModel.movieDetails.movie.releaseDate}',
+                          style: AppTypography.darkprimary.label16
+                              .copyWith(fontWeight: FontWeight.bold),
+                        ),
+                        Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: MovieButton(
+                                isTransparent: false,
+                                text: t.movie_detail_screen.getTickets,
+                                onTap: () {})),
+                        Padding(
+                          padding: EdgeInsets.only(bottom: 15.h),
+                          child: MovieButton(
+                            isTransparent: true,
+                            onTap: () {},
+                            text: t.movie_detail_screen.watchTrailer,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Container(child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(t.movie_detail_screen.genres, style: AppTypography.primary.label16.copyWith(fontWeight: FontWeight.bold),),
+                    SizedBox(
+                      height: 70.h,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: viewModel.movieDetails.genres.length,
+                        itemBuilder: (context, count){
+                         return Center(
+                           child: Card(
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22)),
+                            color: AppColors.appColorsPallet[count],
+                              child: Padding(
+                                padding: const EdgeInsets.all(8),
+                                child: Text(viewModel.movieDetails.genres[count], style: AppTypography.darkprimary.label12, ),
                               ),
                             ),
-                            child:Align(
-                              alignment: Alignment.bottomCenter,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Text('${t.movie_detail_screen.releaseDate} ${viewModel.movieDetails.movie.releaseDate}', style: AppTypography.darkprimary.label16.copyWith(fontWeight: FontWeight.bold),),
-                                  Padding(
-                                    padding: const EdgeInsets.all(4.0),
-                                    child: SizedBox(
-                                      height: 70.h,
-                                      width: 250.w,
-                                      child: Card(
-                                        color: AppColors.buttonColor,
-                                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-                                        child: Center(child: Text(t.movie_detail_screen.getTickets, style: AppTypography.darkprimary.label16.copyWith(fontWeight: FontWeight.bold),)),
-                                      )),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(bottom: 15.h),
-                                    child: SizedBox(
-                                      height: 70.h,
-                                      width: 250.w,
-                                      child: Card(
-                                        color: Colors.transparent,
-                                        shape: RoundedRectangleBorder(
-                                          side: BorderSide(color: AppColors.buttonColor),
-                                          borderRadius: BorderRadius.circular(15)),
-                                        child: Center(child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.center,
-                                          children: [
-                                            Icon(Icons.play_arrow, color: AppColors.textWhiteColor,), 
-                                            Text(t.movie_detail_screen.watchTrailer, style: AppTypography.darkprimary.label16.copyWith(fontWeight: FontWeight.bold),),
-                                          ],
-                                        )),
-                                      )),
-                                  )
-                                ],
-                                
-                              ),
-                            ) ,
+                         );
+                      }),
+                    ),
+                    Divider(endIndent: 10, indent: 10, color: AppColors.lightSkeletonColor,)
+                  ],
+                ),),
               )
+
             ],
           ),
         );

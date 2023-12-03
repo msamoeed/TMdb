@@ -30,7 +30,8 @@ class MovieCard extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    late List<String> genres = [];
+    late List<String> genres = HelperMethods.getGenreNamesByIds(
+        movie.genreIds, viewModel.getMoviesGenres(ref).value!.genres);
     // Check if the card is horizontal or not
     return GestureDetector(
       onTap: () =>
@@ -39,8 +40,6 @@ class MovieCard extends ConsumerWidget {
           ? viewModel.getMoviesGenres(ref).when(
                 // If data is available
                 data: (data) {
-                  genres = HelperMethods.getGenreNamesByIds(
-                      movie.genreIds, data!.genres);
                   return Container(
                     height: height,
                     child: Row(
@@ -48,14 +47,17 @@ class MovieCard extends ConsumerWidget {
                         // Left side with movie poster
                         Expanded(
                           flex: 2,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              shape: BoxShape.rectangle,
-                              borderRadius: BorderRadius.circular(15.r),
-                              image: DecorationImage(
-                                fit: BoxFit.fill,
-                                image: CachedNetworkImageProvider(
-                                    '${Config.imageUrl}${(movie.posterPath).toString()}'),
+                          child: Hero(
+                            tag: this.movie.id.toString(),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.rectangle,
+                                borderRadius: BorderRadius.circular(15.r),
+                                image: DecorationImage(
+                                  fit: BoxFit.fill,
+                                  image: CachedNetworkImageProvider(
+                                      '${Config.imageUrl}${(movie.posterPath).toString()}'),
+                                ),
                               ),
                             ),
                           ),
@@ -109,28 +111,31 @@ class MovieCard extends ConsumerWidget {
                 ),
               )
           // If the card is not horizontal
-          : Container(
-              height: height,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                shape: BoxShape.rectangle,
-                borderRadius: BorderRadius.circular(15.r),
-                image: DecorationImage(
-                  fit: BoxFit.fill,
-                  image: CachedNetworkImageProvider(
-                      '${Config.imageUrl}${(movie.posterPath).toString()}'),
+          : Hero(
+              tag: this.movie.id.toString(),
+              child: Container(
+                height: height,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  shape: BoxShape.rectangle,
+                  borderRadius: BorderRadius.circular(15.r),
+                  image: DecorationImage(
+                    fit: BoxFit.fill,
+                    image: CachedNetworkImageProvider(
+                        '${Config.imageUrl}${(movie.posterPath).toString()}'),
+                  ),
                 ),
-              ),
-              child: Align(
-                alignment: Alignment.bottomLeft,
-                child: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Text(
-                    (movie.title).toString(),
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 2,
-                    style: AppTypography.darkprimary.title18
-                        .copyWith(fontWeight: FontWeight.w800),
+                child: Align(
+                  alignment: Alignment.bottomLeft,
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Text(
+                      (movie.title).toString(),
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
+                      style: AppTypography.darkprimary.title18
+                          .copyWith(fontWeight: FontWeight.w800),
+                    ),
                   ),
                 ),
               ),

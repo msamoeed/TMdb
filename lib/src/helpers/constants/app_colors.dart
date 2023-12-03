@@ -131,6 +131,19 @@ class AppColors {
     ],
   );
 
+    /// The color pallet of the app.
+  static List<Color> appColorsPallet = [
+    Color.fromRGBO(21, 210, 188, 1),
+    Color.fromRGBO(226, 108, 165, 1),
+    Color.fromRGBO(86, 76, 163, 1), 
+    Color.fromRGBO(205, 157, 15, 1), 
+    Color.fromRGBO(97, 195, 242, 1)      ,
+   Color.fromRGBO(46, 39, 57, 1),
+    Color.fromRGBO(130, 125, 136, 1),
+   Color.fromRGBO(219, 219, 223, 1),
+    Color.fromRGBO(246, 246, 250, 1)
+                           
+  ];
   /// The color value for dark grey buttons in the app.
   static const Color buttonGreyColor = Color(0xFF1c1c1c);
 
