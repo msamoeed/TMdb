@@ -5,7 +5,7 @@ version: 1.0.0+1
 environment:
   sdk: '>=3.0.0'
 dependencies:
-  flutter_inappwebview: ^5.8.0
+  flutter_inappwebview: ^6.1.5
   animated_theme_switcher: ^2.0.3
   another_flushbar: ^1.10.29
   envied: ^0.5.2
@@ -46,7 +46,7 @@ dependencies:
   path_provider: ^2.1.1
   provider: ^6.0.3
   
-  youtube_player_flutter: ^8.1.2
+  youtube_player_flutter: ^9.1.1
   sentry_dio: ^7.2.0
   sentry_flutter: ^7.20.2
   
