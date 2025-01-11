@@ -5,6 +5,7 @@ version: 1.0.0+1
 environment:
   sdk: '>=3.0.0'
 dependencies:
+  flutter_inappwebview: ^5.8.0
   animated_theme_switcher: ^2.0.3
   another_flushbar: ^1.10.29
   envied: ^0.5.2
@@ -35,7 +36,7 @@ dependencies:
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   
-  intl: ^0.18.0 
+  intl: ^0.19.0 
   
   loading_overlay: ^0.3.0
   logger: ^1.1.0
@@ -47,7 +48,7 @@ dependencies:
   
   youtube_player_flutter: ^8.1.2
   sentry_dio: ^7.2.0
-  sentry_flutter: ^7.13.2
+  sentry_flutter: ^7.20.2
   
   
   shimmer: ^2.0.0
